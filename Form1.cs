@@ -15,31 +15,63 @@ namespace icyTower
         public frmIcyTower()
         {
             InitializeComponent();
+            timer.Start();
+
         }
-
+        int gameSpeed = 5;
         bool goLeft, goRight;
-
-        
 
         private void keyIsDown(object sender, KeyEventArgs e)
         {
-            goLeft = true; goRight = true;
-
-            if (goLeft == true && e.KeyCode == Keys.Left && pctPlayer.Left>5)
+            if (e.KeyCode == Keys.Left)
             {
-                pctPlayer.Left -=10;
+                goLeft = true;
             }
 
-            if (goRight == true && e.KeyCode == Keys.Right && pctPlayer.Right < 390)
+            if ( e.KeyCode == Keys.Right)
             {
-                pctPlayer.Left += 10;
+                goRight = true;
             }
         }
 
         private void keyIsUp(object sender, KeyEventArgs e)
         {
-            goLeft = false;
-            goRight = false;
+            if (e.KeyCode == Keys.Left)
+            {
+                goLeft = false;
+            }
+
+            if (e.KeyCode == Keys.Right)
+            {
+                goRight = false;
+            }
+        }
+
+        private void gameTimer(object sender, EventArgs e)
+        {
+            if (goLeft == true && pctPlayer.Left > 5)
+            {
+                pctPlayer.Left -= 10;
+            }
+
+            if (goRight == true && pctPlayer.Right<390)
+            {
+                pctPlayer.Left += 10;
+            }
+
+            pctBackGround1.Top += gameSpeed;
+            pctBackGround2.Top += gameSpeed;
+
+            if (pctBackGround2.Top > 420)
+            {
+                pctBackGround2.Top = -420;
+            }
+
+            if (pctBackGround1.Top > 420)
+            {
+                pctBackGround1.Top = -420;
+            }
+
         }
     }
 }

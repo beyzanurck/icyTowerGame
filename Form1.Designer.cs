@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel = new System.Windows.Forms.Panel();
             this.pctPlayer = new System.Windows.Forms.PictureBox();
             this.pctPlatform = new System.Windows.Forms.PictureBox();
             this.pctBackGround2 = new System.Windows.Forms.PictureBox();
             this.pctBackGround1 = new System.Windows.Forms.PictureBox();
+            this.timer = new System.Windows.Forms.Timer(this.components);
             this.panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctPlatform)).BeginInit();
@@ -54,8 +56,9 @@
             // 
             // pctPlayer
             // 
+            this.pctPlayer.BackColor = System.Drawing.Color.White;
             this.pctPlayer.Image = global::icyTower.Properties.Resources.player;
-            this.pctPlayer.Location = new System.Drawing.Point(178, 365);
+            this.pctPlayer.Location = new System.Drawing.Point(163, 365);
             this.pctPlayer.Name = "pctPlayer";
             this.pctPlayer.Size = new System.Drawing.Size(40, 52);
             this.pctPlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -91,6 +94,11 @@
             this.pctBackGround1.TabIndex = 0;
             this.pctBackGround1.TabStop = false;
             // 
+            // timer
+            // 
+            this.timer.Interval = 30;
+            this.timer.Tick += new System.EventHandler(this.gameTimer);
+            // 
             // frmIcyTower
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -118,6 +126,7 @@
         private System.Windows.Forms.PictureBox pctBackGround2;
         private System.Windows.Forms.PictureBox pctPlayer;
         private System.Windows.Forms.PictureBox pctPlatform;
+        private System.Windows.Forms.Timer timer;
     }
 }
 
