@@ -33,7 +33,6 @@ namespace icyTower
                 goRight = true;
             }
         }
-
         private void keyIsUp(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Left)
@@ -62,12 +61,12 @@ namespace icyTower
             pctBackGround1.Top += gameSpeed;
             pctBackGround2.Top += gameSpeed;
 
-            if (pctBackGround2.Top > 420)
+            if (pctBackGround2.Top >= 420)
             {
                 pctBackGround2.Top = -420;
             }
 
-            if (pctBackGround1.Top > 420)
+            if (pctBackGround1.Top >= 420)
             {
                 pctBackGround1.Top = -420;
             }
