@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.panel = new System.Windows.Forms.Panel();
-            this.pctBackGround1 = new System.Windows.Forms.PictureBox();
-            this.pctBackGround2 = new System.Windows.Forms.PictureBox();
-            this.pctPlatform = new System.Windows.Forms.PictureBox();
             this.pctPlayer = new System.Windows.Forms.PictureBox();
+            this.pctPlatform = new System.Windows.Forms.PictureBox();
+            this.pctBackGround2 = new System.Windows.Forms.PictureBox();
+            this.pctBackGround1 = new System.Windows.Forms.PictureBox();
             this.panel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pctBackGround1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctBackGround2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctPlatform)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctPlayer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctPlatform)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBackGround2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBackGround1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel
@@ -52,15 +52,24 @@
             this.panel.Size = new System.Drawing.Size(400, 420);
             this.panel.TabIndex = 0;
             // 
-            // pctBackGround1
+            // pctPlayer
             // 
-            this.pctBackGround1.Image = global::icyTower.Properties.Resources.uncolored_piramids;
-            this.pctBackGround1.Location = new System.Drawing.Point(0, -420);
-            this.pctBackGround1.Name = "pctBackGround1";
-            this.pctBackGround1.Size = new System.Drawing.Size(400, 420);
-            this.pctBackGround1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pctBackGround1.TabIndex = 0;
-            this.pctBackGround1.TabStop = false;
+            this.pctPlayer.Image = global::icyTower.Properties.Resources.player;
+            this.pctPlayer.Location = new System.Drawing.Point(178, 365);
+            this.pctPlayer.Name = "pctPlayer";
+            this.pctPlayer.Size = new System.Drawing.Size(40, 52);
+            this.pctPlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pctPlayer.TabIndex = 3;
+            this.pctPlayer.TabStop = false;
+            // 
+            // pctPlatform
+            // 
+            this.pctPlatform.Image = global::icyTower.Properties.Resources.platform1;
+            this.pctPlatform.Location = new System.Drawing.Point(26, 273);
+            this.pctPlatform.Name = "pctPlatform";
+            this.pctPlatform.Size = new System.Drawing.Size(103, 32);
+            this.pctPlatform.TabIndex = 2;
+            this.pctPlatform.TabStop = false;
             // 
             // pctBackGround2
             // 
@@ -72,24 +81,15 @@
             this.pctBackGround2.TabIndex = 1;
             this.pctBackGround2.TabStop = false;
             // 
-            // pctPlatform
+            // pctBackGround1
             // 
-            this.pctPlatform.Image = global::icyTower.Properties.Resources.platform1;
-            this.pctPlatform.Location = new System.Drawing.Point(26, 273);
-            this.pctPlatform.Name = "pctPlatform";
-            this.pctPlatform.Size = new System.Drawing.Size(103, 32);
-            this.pctPlatform.TabIndex = 2;
-            this.pctPlatform.TabStop = false;
-            // 
-            // pctPlayer
-            // 
-            this.pctPlayer.Image = global::icyTower.Properties.Resources.player;
-            this.pctPlayer.Location = new System.Drawing.Point(162, 365);
-            this.pctPlayer.Name = "pctPlayer";
-            this.pctPlayer.Size = new System.Drawing.Size(40, 52);
-            this.pctPlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pctPlayer.TabIndex = 3;
-            this.pctPlayer.TabStop = false;
+            this.pctBackGround1.Image = global::icyTower.Properties.Resources.uncolored_piramids;
+            this.pctBackGround1.Location = new System.Drawing.Point(0, -420);
+            this.pctBackGround1.Name = "pctBackGround1";
+            this.pctBackGround1.Size = new System.Drawing.Size(400, 420);
+            this.pctBackGround1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pctBackGround1.TabIndex = 0;
+            this.pctBackGround1.TabStop = false;
             // 
             // frmIcyTower
             // 
@@ -99,12 +99,14 @@
             this.Controls.Add(this.panel);
             this.Name = "frmIcyTower";
             this.Text = "icy tower";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyIsDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.keyIsUp);
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pctBackGround1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctBackGround2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctPlatform)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctPlayer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctPlatform)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBackGround2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctBackGround1)).EndInit();
             this.ResumeLayout(false);
 
         }
