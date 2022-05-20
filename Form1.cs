@@ -18,8 +18,11 @@ namespace icyTower
             timer.Start();
 
         }
-        int gameSpeed = 5;
+        int gameSpeed = 3;
         bool goLeft, goRight;
+
+        Random platform = new Random();
+        int platformLocation;
 
         private void keyIsDown(object sender, KeyEventArgs e)
         {
@@ -69,6 +72,40 @@ namespace icyTower
             if (pctBackGround1.Top >= 420)
             {
                 pctBackGround1.Top = -420;
+            }
+
+            pctPlatform.Top += (gameSpeed);
+            pctPlatform2.Top += (gameSpeed);
+            pctPlatform3.Top += (gameSpeed);
+            pctPlatform4.Top += (gameSpeed);
+
+
+            if (pctPlatform.Top >= 420)
+            {
+                platformLocation = platform.Next(6, 293);
+                pctPlatform.Top = 0;
+                pctPlatform.Left = platformLocation;
+            }
+
+            if (pctPlatform2.Top >= 420)
+            {
+                platformLocation = platform.Next(6, 293);
+                pctPlatform2.Top = 0;
+                pctPlatform2.Left = platformLocation;
+            }
+
+            if (pctPlatform3.Top >= 420)
+            {
+                platformLocation = platform.Next(6, 293);
+                pctPlatform3.Top = 0;
+                pctPlatform3.Left = platformLocation;
+            }
+
+            if (pctPlatform4.Top >= 420)
+            {
+                platformLocation = platform.Next(6, 293);
+                pctPlatform4.Top = 0;
+                pctPlatform4.Left = platformLocation;
             }
 
         }
