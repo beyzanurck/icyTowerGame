@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace icyTower
@@ -18,8 +11,11 @@ namespace icyTower
             timer.Start();
 
         }
-        int gameSpeed = 3;
-        bool goLeft, goRight;
+
+        bool collision;
+        int gameSpeed = 1;
+        bool goLeft, goRight, goUp;
+        int step = 0;
 
         Random platform = new Random();
         int platformLocation;
@@ -35,6 +31,11 @@ namespace icyTower
             {
                 goRight = true;
             }
+
+            if (e.KeyCode==Keys.Space)
+            {
+                goUp = true;
+            }
         }
         private void keyIsUp(object sender, KeyEventArgs e)
         {
@@ -47,10 +48,17 @@ namespace icyTower
             {
                 goRight = false;
             }
+
+            if (e.KeyCode == Keys.Space)
+            {
+                goUp = false;
+            }
         }
 
         private void gameTimer(object sender, EventArgs e)
         {
+            goUp = true;
+
             if (goLeft == true && pctPlayer.Left > 5)
             {
                 pctPlayer.Left -= 10;
@@ -60,6 +68,23 @@ namespace icyTower
             {
                 pctPlayer.Left += 10;
             }
+
+            if (goUp == true && step < 16)
+            {
+                pctPlayer.Top -= 10;
+                step++;
+            }
+
+            if (step == 16)
+            {
+                pctPlayer.Top += 8;
+            }
+
+            if (collision = isCollision(pctPlatform2, pctPlayer))
+            {
+                step = 0;
+            }
+
 
             pctBackGround1.Top += gameSpeed;
             pctBackGround2.Top += gameSpeed;
@@ -108,6 +133,29 @@ namespace icyTower
                 pctPlatform4.Left = platformLocation;
             }
 
+        }
+
+        private bool isCollision(PictureBox platform, PictureBox player)
+        {
+            bool y = false, x = false;
+            if ((player.Bottom > platform.Top - 10 & player.Bottom < platform.Top))
+            {
+                y = true;
+            }
+
+            if ((player.Right>platform.Left & player.Left < platform.Left)
+                 || (player.Left < platform.Right & player.Right > platform.Right)
+                 || (player.Left > platform.Left & player.Right < platform.Right))
+            {
+                x = true;
+            }
+
+            if (x == true & y == true)
+            {
+                return true;
+            }
+            else
+                return false;
         }
     }
 }

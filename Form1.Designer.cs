@@ -30,22 +30,22 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel = new System.Windows.Forms.Panel();
+            this.pctPlayer = new System.Windows.Forms.PictureBox();
+            this.pctPlatform4 = new System.Windows.Forms.PictureBox();
             this.pctPlatform3 = new System.Windows.Forms.PictureBox();
             this.pctPlatform = new System.Windows.Forms.PictureBox();
             this.pctPlatform2 = new System.Windows.Forms.PictureBox();
             this.pctBackGround2 = new System.Windows.Forms.PictureBox();
             this.pctBackGround1 = new System.Windows.Forms.PictureBox();
             this.timer = new System.Windows.Forms.Timer(this.components);
-            this.pctPlatform4 = new System.Windows.Forms.PictureBox();
-            this.pctPlayer = new System.Windows.Forms.PictureBox();
             this.panel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctPlayer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctPlatform4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctPlatform3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctPlatform)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctPlatform2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBackGround2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBackGround1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctPlatform4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctPlayer)).BeginInit();
             this.SuspendLayout();
             // 
             // panel
@@ -63,6 +63,27 @@
             this.panel.Size = new System.Drawing.Size(400, 420);
             this.panel.TabIndex = 0;
             // 
+            // pctPlayer
+            // 
+            this.pctPlayer.Image = global::icyTower.Properties.Resources.player;
+            this.pctPlayer.Location = new System.Drawing.Point(83, 368);
+            this.pctPlayer.Name = "pctPlayer";
+            this.pctPlayer.Size = new System.Drawing.Size(40, 52);
+            this.pctPlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pctPlayer.TabIndex = 9;
+            this.pctPlayer.TabStop = false;
+            // 
+            // pctPlatform4
+            // 
+            this.pctPlatform4.Image = global::icyTower.Properties.Resources.platform2;
+            this.pctPlatform4.Location = new System.Drawing.Point(83, 36);
+            this.pctPlatform4.Name = "pctPlatform4";
+            this.pctPlatform4.Size = new System.Drawing.Size(32, 33);
+            this.pctPlatform4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pctPlatform4.TabIndex = 8;
+            this.pctPlatform4.TabStop = false;
+            this.pctPlatform4.Tag = "platform";
+            // 
             // pctPlatform3
             // 
             this.pctPlatform3.Image = global::icyTower.Properties.Resources.platform2;
@@ -72,6 +93,7 @@
             this.pctPlatform3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pctPlatform3.TabIndex = 7;
             this.pctPlatform3.TabStop = false;
+            this.pctPlatform3.Tag = "platform";
             // 
             // pctPlatform
             // 
@@ -81,6 +103,7 @@
             this.pctPlatform.Size = new System.Drawing.Size(103, 32);
             this.pctPlatform.TabIndex = 2;
             this.pctPlatform.TabStop = false;
+            this.pctPlatform.Tag = "platform";
             // 
             // pctPlatform2
             // 
@@ -91,6 +114,7 @@
             this.pctPlatform2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pctPlatform2.TabIndex = 5;
             this.pctPlatform2.TabStop = false;
+            this.pctPlatform2.Tag = "platform";
             // 
             // pctBackGround2
             // 
@@ -114,28 +138,8 @@
             // 
             // timer
             // 
-            this.timer.Interval = 30;
+            this.timer.Interval = 1;
             this.timer.Tick += new System.EventHandler(this.gameTimer);
-            // 
-            // pctPlatform4
-            // 
-            this.pctPlatform4.Image = global::icyTower.Properties.Resources.platform2;
-            this.pctPlatform4.Location = new System.Drawing.Point(83, 36);
-            this.pctPlatform4.Name = "pctPlatform4";
-            this.pctPlatform4.Size = new System.Drawing.Size(32, 33);
-            this.pctPlatform4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pctPlatform4.TabIndex = 8;
-            this.pctPlatform4.TabStop = false;
-            // 
-            // pctPlayer
-            // 
-            this.pctPlayer.Image = global::icyTower.Properties.Resources.player;
-            this.pctPlayer.Location = new System.Drawing.Point(208, 365);
-            this.pctPlayer.Name = "pctPlayer";
-            this.pctPlayer.Size = new System.Drawing.Size(40, 52);
-            this.pctPlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pctPlayer.TabIndex = 9;
-            this.pctPlayer.TabStop = false;
             // 
             // frmIcyTower
             // 
@@ -149,13 +153,13 @@
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.keyIsUp);
             this.panel.ResumeLayout(false);
             this.panel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctPlayer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctPlatform4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctPlatform3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctPlatform)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctPlatform2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBackGround2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBackGround1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctPlatform4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctPlayer)).EndInit();
             this.ResumeLayout(false);
 
         }
