@@ -20,6 +20,8 @@ namespace icyTower
         Random platform = new Random();
         int platformLocation;
 
+        PictureBox[] platforms = new PictureBox[4];
+
         private void keyIsDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Left)
@@ -61,7 +63,7 @@ namespace icyTower
 
             if (goLeft == true && pctPlayer.Left > 5)
             {
-                pctPlayer.Left -= 10;
+                pctPlayer.Left -= 7;
             }
 
             if (goRight == true && pctPlayer.Right<390)
@@ -69,23 +71,27 @@ namespace icyTower
                 pctPlayer.Left += 10;
             }
 
-            if (goUp == true && step < 16)
+            if (goUp == true && step < 20)
             {
-                pctPlayer.Top -= 10;
+                pctPlayer.Top -= 7;
                 step++;
             }
 
-            if (step == 16)
+            if (step == 20)
             {
-                pctPlayer.Top += 8;
+                pctPlayer.Top += 7;
             }
 
-            if (collision = isCollision(pctPlatform2, pctPlayer))
+            platforms[0] = pctPlatform; platforms[1] = pctPlatform2; 
+            platforms[2] = pctPlatform3; platforms[3] = pctPlatform4;
+
+            if (collision = isCollision(platforms, pctPlayer))
             {
                 step = 0;
+                lblY.Text = pctPlayer.Top.ToString();
+                lblX.Text = pctPlayer.Left.ToString();
             }
-
-
+           
             pctBackGround1.Top += gameSpeed;
             pctBackGround2.Top += gameSpeed;
 
@@ -135,27 +141,38 @@ namespace icyTower
 
         }
 
-        private bool isCollision(PictureBox platform, PictureBox player)
+        private bool isCollision(PictureBox[] platform, PictureBox player)
         {
-            bool y = false, x = false;
-            if ((player.Bottom > platform.Top - 10 & player.Bottom < platform.Top))
+            
+
+            for (int i = 0; i < platform.Length; i++)
             {
-                y = true;
+
+                bool y = false, x = false;
+
+
+                if ((player.Bottom > platform[i].Top - 5 & player.Bottom < platform[i].Top))
+                {
+                    y = true;
+                    
+
+                }
+                if ((player.Right > platform[i].Left & player.Left < platform[i].Left)
+                     || (player.Left < platform[i].Right & player.Right > platform[i].Right)
+                     || (player.Left > platform[i].Left & player.Right < platform[i].Right))
+                {
+                    x = true;
+                    
+                }
+                
+                if (x == true & y == true)
+                {
+                    return true;
+                }
             }
 
-            if ((player.Right>platform.Left & player.Left < platform.Left)
-                 || (player.Left < platform.Right & player.Right > platform.Right)
-                 || (player.Left > platform.Left & player.Right < platform.Right))
-            {
-                x = true;
-            }
-
-            if (x == true & y == true)
-            {
-                return true;
-            }
-            else
-                return false;
+            
+            return false;
         }
     }
 }

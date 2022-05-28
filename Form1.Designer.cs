@@ -38,6 +38,8 @@
             this.pctBackGround2 = new System.Windows.Forms.PictureBox();
             this.pctBackGround1 = new System.Windows.Forms.PictureBox();
             this.timer = new System.Windows.Forms.Timer(this.components);
+            this.lblX = new System.Windows.Forms.Label();
+            this.lblY = new System.Windows.Forms.Label();
             this.panel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pctPlayer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctPlatform4)).BeginInit();
@@ -66,7 +68,7 @@
             // pctPlayer
             // 
             this.pctPlayer.Image = global::icyTower.Properties.Resources.player;
-            this.pctPlayer.Location = new System.Drawing.Point(83, 368);
+            this.pctPlayer.Location = new System.Drawing.Point(126, 368);
             this.pctPlayer.Name = "pctPlayer";
             this.pctPlayer.Size = new System.Drawing.Size(40, 52);
             this.pctPlayer.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -75,10 +77,10 @@
             // 
             // pctPlatform4
             // 
-            this.pctPlatform4.Image = global::icyTower.Properties.Resources.platform2;
-            this.pctPlatform4.Location = new System.Drawing.Point(83, 36);
+            this.pctPlatform4.Image = global::icyTower.Properties.Resources.platform1;
+            this.pctPlatform4.Location = new System.Drawing.Point(55, 35);
             this.pctPlatform4.Name = "pctPlatform4";
-            this.pctPlatform4.Size = new System.Drawing.Size(32, 33);
+            this.pctPlatform4.Size = new System.Drawing.Size(101, 32);
             this.pctPlatform4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pctPlatform4.TabIndex = 8;
             this.pctPlatform4.TabStop = false;
@@ -86,10 +88,10 @@
             // 
             // pctPlatform3
             // 
-            this.pctPlatform3.Image = global::icyTower.Properties.Resources.platform2;
-            this.pctPlatform3.Location = new System.Drawing.Point(251, 256);
+            this.pctPlatform3.Image = global::icyTower.Properties.Resources.platform1;
+            this.pctPlatform3.Location = new System.Drawing.Point(233, 141);
             this.pctPlatform3.Name = "pctPlatform3";
-            this.pctPlatform3.Size = new System.Drawing.Size(32, 33);
+            this.pctPlatform3.Size = new System.Drawing.Size(101, 32);
             this.pctPlatform3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pctPlatform3.TabIndex = 7;
             this.pctPlatform3.TabStop = false;
@@ -98,7 +100,7 @@
             // pctPlatform
             // 
             this.pctPlatform.Image = global::icyTower.Properties.Resources.platform1;
-            this.pctPlatform.Location = new System.Drawing.Point(155, 141);
+            this.pctPlatform.Location = new System.Drawing.Point(53, 352);
             this.pctPlatform.Name = "pctPlatform";
             this.pctPlatform.Size = new System.Drawing.Size(103, 32);
             this.pctPlatform.TabIndex = 2;
@@ -108,7 +110,7 @@
             // pctPlatform2
             // 
             this.pctPlatform2.Image = global::icyTower.Properties.Resources.platform1;
-            this.pctPlatform2.Location = new System.Drawing.Point(46, 352);
+            this.pctPlatform2.Location = new System.Drawing.Point(174, 256);
             this.pctPlatform2.Name = "pctPlatform2";
             this.pctPlatform2.Size = new System.Drawing.Size(101, 32);
             this.pctPlatform2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -138,14 +140,34 @@
             // 
             // timer
             // 
-            this.timer.Interval = 1;
+            this.timer.Interval = 5;
             this.timer.Tick += new System.EventHandler(this.gameTimer);
+            // 
+            // lblX
+            // 
+            this.lblX.AutoSize = true;
+            this.lblX.Location = new System.Drawing.Point(25, 441);
+            this.lblX.Name = "lblX";
+            this.lblX.Size = new System.Drawing.Size(20, 13);
+            this.lblX.TabIndex = 1;
+            this.lblX.Text = "X: ";
+            // 
+            // lblY
+            // 
+            this.lblY.AutoSize = true;
+            this.lblY.Location = new System.Drawing.Point(108, 441);
+            this.lblY.Name = "lblY";
+            this.lblY.Size = new System.Drawing.Size(20, 13);
+            this.lblY.TabIndex = 1;
+            this.lblY.Text = "Y: ";
             // 
             // frmIcyTower
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(413, 518);
+            this.Controls.Add(this.lblY);
+            this.Controls.Add(this.lblX);
             this.Controls.Add(this.panel);
             this.Name = "frmIcyTower";
             this.Text = "icy tower";
@@ -161,6 +183,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pctBackGround2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctBackGround1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -175,6 +198,8 @@
         private System.Windows.Forms.PictureBox pctPlatform2;
         private System.Windows.Forms.PictureBox pctPlatform4;
         private System.Windows.Forms.PictureBox pctPlayer;
+        private System.Windows.Forms.Label lblX;
+        private System.Windows.Forms.Label lblY;
     }
 }
 
